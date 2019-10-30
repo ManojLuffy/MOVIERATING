@@ -1,0 +1,35 @@
+.pagination {
+    width: 50%;
+    height: 5vh;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination button {
+    height: 100%;
+    width: 20%;
+    background: green;
+}
+
+.pagenumber {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 70%;
+    margin-top: 1.5%;
+}
+
+.pagenumber input{
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: #0B0A0D;
+}
+
+.pagenumber label {
+    color: grey;
+    text-align: center;
+    width: 20%;
+}

@@ -1,0 +1,33 @@
+.Cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navigationTrending {
+    display: flex;
+}
+
+.navigationTrending p {
+    color: white;
+    font-weight: bold;
+    margin: 10px 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navigationTrending p:hover,
+.navigationTrending p:active,
+.navigationTrending p.active {
+    color: green;
+    border-bottom: 3px solid green;
+    background-color: #1E1E1F;
+}
+
+.active{
+    border-bottom: 2px solid green;
+    color: green;
+}

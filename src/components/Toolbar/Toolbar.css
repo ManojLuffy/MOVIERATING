@@ -1,0 +1,70 @@
+.Toolbar {
+    width: 70%;
+    margin: auto;
+    height: 66px;
+    background-color: #0B0A0D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Toolbar logo {
+    margin-left: auto;
+}
+
+.Toolbar logo img {
+    margin-right: 10px;
+}
+
+.Toolbar input {
+    width: 40%;
+    background-color: #1E1E1F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+    margin-left: auto;
+}
+
+.Toolbar input:active,
+.Toolbar input:hover {
+    border: 1px solid green;
+}
+
+ .Toolbar img {
+     cursor: pointer;
+     width: 100px;
+     height: 66px;
+ }
+
+ .Toolbar nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ }
+
+ .Toolbar a {
+     color: white;
+     padding: 10px 15px;
+ }
+
+ .Toolbar a.active {
+    border-bottom: 4px solid green;
+    background-color: #1E1E1F;
+ }
+
+ @media(max-width: 650px) {
+    .Toolbar ul {
+        display: none;
+    }
+    .Toolbar {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .Toolbar input {
+        width: 60%;
+    }
+}
+

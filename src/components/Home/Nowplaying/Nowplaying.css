@@ -1,0 +1,15 @@
+
+    .Carousel {
+        width: 70%;
+        margin-right: auto;
+        padding: 10px;
+        height: auto;
+    }
+
+    @media(max-width: 650px)
+    {
+        .Carousel {
+            width: 100%;
+        }
+    }
+
