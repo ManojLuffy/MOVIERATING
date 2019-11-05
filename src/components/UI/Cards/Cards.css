@@ -48,6 +48,10 @@
     padding: 2px;
 }
 
+.title {
+    position: absolute;
+    bottom: 0;
+}
 
 
 @media(max-width: 650px) {

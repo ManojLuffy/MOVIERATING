@@ -29,7 +29,7 @@ const Movies = props => {
         <div className="Movies">
             <div className="Cards">
             { movies ? movies.map(res => {
-                return <Link to={'/' + res.id} key={res.id}>
+                return <Link to={'/' + res.id + '/movie'} key={res.id}>
                             <Cards detailsPath={'/details'} 
                                 cardposter={"https://image.tmdb.org/t/p/w500/"+res.poster_path}
                                 title={res.title} 

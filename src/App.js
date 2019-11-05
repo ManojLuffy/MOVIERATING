@@ -17,7 +17,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/movies" exact component={Movies} />
         <Route path="/tv" exact component={Tvshow} />
-        <Route path="/:id" exact component={CardDetails} />
+        <Route path="/:id/:type" exact component={CardDetails} />
       </Switch>
     </div>
   );

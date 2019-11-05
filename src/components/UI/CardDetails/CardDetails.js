@@ -3,7 +3,7 @@ import './CardDetails.css';
 import {connect} from 'react-redux';
 
 
-import ReactPlayer from 'react-player'
+//import ReactPlayer from 'react-player'
 import { getCardDetails } from '../../../store/actions/CardDetails';
 
 const CardDetails = props => {
@@ -11,8 +11,8 @@ const CardDetails = props => {
     const {onGetCardDetailsInit} = props;
     
     useEffect(() => {  
-        onGetCardDetailsInit(props.match.params.id);
-    }, [onGetCardDetailsInit, props.match.params.id])
+        onGetCardDetailsInit(props.match.params.id, props.match.params.type);
+    }, [onGetCardDetailsInit, props.match.params.id, props.match.params.type])
     
     let CardDetails = null;
     if(props.CardDetails)
@@ -28,7 +28,7 @@ const CardDetails = props => {
                     <div className="main">
                         <img src={"https://image.tmdb.org/t/p/w500/" + CardDetails.poster_path} alt="details"/>
                         <div className="movieDetails">
-                            <h2>{CardDetails.original_title}</h2>
+                            <h2>{CardDetails.original_title? CardDetails.original_title : CardDetails.original_name}</h2>
                             <p>{CardDetails.overview}</p>
 
                             <div className="listcontent">
@@ -57,20 +57,35 @@ const CardDetails = props => {
                                         }
                                     })}
                             </div>
-                            <div className="listcontent">
+                            {
+                                CardDetails.credits.crew[0] ? 
+                                <div className="listcontent">
                                 <strong>Director: </strong>
                                     {CardDetails.credits.crew[0].name}
-                            </div>
-
+                                </div>
+                                :
+                                <div className="listcontent">
+                                <strong>Director: </strong>
+                                    {CardDetails.created_by[0].name}
+                                </div>
+                            }
+                            
                             <div className="listcontent">
                                 <strong>Rating: </strong>
                                     {CardDetails.vote_average}
                             </div>
-
+                            {CardDetails.release_date ? 
                             <div className="listcontent">
-                                <strong>Release Date: </strong>
-                                    {CardDetails.release_date}
+                            <strong>Release Date: </strong>
+                                {CardDetails.release_date}
                             </div>
+                            :
+                            <div className="listcontent">
+                                <strong>Seasons: </strong>
+                                    {CardDetails.seasons.length}
+                            </div>
+                            }
+                            
                             
 
                         </div>
@@ -78,25 +93,14 @@ const CardDetails = props => {
                     : null }
                     
                     <br/>
-                    <h3>More Info </h3>
+                   {/* <h3>More Info </h3>
                     <div className="bottom"> 
                         <ReactPlayer url='https://www.youtube.com/watch?v=oCBDl58lBoU' 
                             playing
                             controls
                             light />
-                        {/* <div className="listcontent">
-                                <strong>Actors: </strong>
-                                    {CardDetails.credits.cast.map((a,i) => {
-                                        if(i === CardDetails.genres.length-1)
-                                        {
-                                            return a.name
-                                        }
-                                        else {
-                                            return a.name+", "
-                                        }
-                                    })}
-                            </div> */}
-                    </div>
+                       
+                    </div> */}
         </div>
     );
 }
@@ -109,7 +113,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetCardDetailsInit: (id) => dispatch(getCardDetails(id))
+        onGetCardDetailsInit: (id, type) => dispatch(getCardDetails(id, type))
     }
 }
 

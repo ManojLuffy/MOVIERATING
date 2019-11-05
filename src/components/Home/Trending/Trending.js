@@ -41,14 +41,14 @@ const Trending = props => {
             </div>
             <div className="Cards">
             {showResults ? movieResults ? movieResults.map(res => {
-                return <Link to={'/' + res.id} key={res.id}>
+                return <Link to={'/' + res.id + '/movie'} key={res.id}>
                     <Cards key={res.id} cardposter={"https://image.tmdb.org/t/p/w500/"+res.poster_path}
                             title={res.title} rating={res.vote_average === 0 ? 'NA' : res.vote_average } />
                 </Link>
                 
             }):null :  
             tvResults ? tvResults.map(res => {
-                return  <Link to={'/' + res.id} key={res.id}>
+                return  <Link to={'/' + res.id + '/tv'} key={res.id}>
                     <Cards key={res.id} cardposter={"https://image.tmdb.org/t/p/w500/"+res.poster_path}
                             title={res.name} rating={res.vote_average === 0 ? 'NA' : res.vote_average } />
                 </Link>
