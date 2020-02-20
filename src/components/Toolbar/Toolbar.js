@@ -14,7 +14,7 @@ const Toolbar = (props) => {
                         <NavLink to="/movies"> Movies </NavLink>
                         <NavLink to="/tv"> Tv Shows </NavLink>
                 </ul>
-            <input type="text" placeholder="Search..." /> 
+            {/* <input type="text" placeholder="Search..." />  */}
         </header>
     </div>
     );
