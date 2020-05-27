@@ -3,8 +3,8 @@
 	Used axios to make requests to Movie Database API to get the all the details needed.
 
 
-![](images/1.JPG)
-![](images/2.JPG)
-![](images/3.JPG)
-![](images/4.JPG)
-![](images/5.JPG)
+![](images/1.PNG)
+![](images/2.PNG)
+![](images/3.PNG)
+![](images/4.PNG)
+![](images/5.PNG)
