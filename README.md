@@ -1,4 +1,4 @@
-## *** For this to work you need to have a moviedb api account and need to write your actions on own. action files frpm store are not uploaded which contain sensitive info. ***
+## *** For this to work you need to have a moviedb api account and need to write your actions on own. action files from store are not uploaded which contain sensitive info. ***
 
 Website to show details of all the Movies and Tv shows including rating, cast, genre, description etc.
 Written with React.JS using react hooks and redux for maintaining global state among all components.
